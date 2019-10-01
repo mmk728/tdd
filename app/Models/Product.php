@@ -13,7 +13,7 @@ class Product
 
     public function isReducedTaxRate()
     {
-        if ($this->name === 'リポビタンD') {
+        if ($this->name === 'リポビタンD' || $this->name === 'キリンチューハイ氷結グレープフルーツ350ml缶') {
             return false;
         }
         return true;
