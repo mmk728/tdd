@@ -2,15 +2,16 @@
 
 namespace App\Factories;
 
-use App\Models\Drink;
-use App\Models\Food;
-use App\Models\Liquor;
-
 class ProductFactory
 {
     public static function create($type)
     {
-        $model_name = "App\\Models\\" . ucfirst($type);
+        $model_name = "App\\Models\\" . self::upperCamelize($type);
         return new $model_name;
+    }
+
+    public static function upperCamelize($str)
+    {
+        return strtr(ucwords(strtr($str, ['_' => ' '])), [' ' => '']);
     }
 }
