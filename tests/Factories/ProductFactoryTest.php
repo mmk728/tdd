@@ -13,37 +13,37 @@ use Tests\TestCase;
 class ProductFactoryTest extends TestCase
 {
     /** @test */
-    public function foodを渡すとFoodモデルが返ってくる()
+    public function オロナミンCを渡すとDrinkモデルが返ってくる()
     {
-        $model = ProductFactory::create($type = 'food');
-        $this->assertInstanceOf(Food::class, $model);
-    }
-
-    /** @test */
-    public function drinkを渡すとDrinkモデルが返ってくる()
-    {
-        $model = ProductFactory::create($type = 'drink');
+        $model = ProductFactory::create($name = 'オロナミンC');
         $this->assertInstanceOf(Drink::class, $model);
     }
 
     /** @test */
-    public function liquorを渡すとLiquorモデルが返ってくる()
+    public function キリンチューハイ氷結グレープフルーツ350ml缶を渡すとLiquorモデルが返ってくる()
     {
-        $model = ProductFactory::create($type = 'liquor');
+        $model = ProductFactory::create($name = 'キリンチューハイ氷結グレープフルーツ350ml缶');
         $this->assertInstanceOf(Liquor::class, $model);
     }
 
     /** @test */
-    public function medicineを渡すとMedicineモデルが返ってくる()
+    public function 新ルルA錠s50錠を渡すとMedicineモデルが返ってくる()
     {
-        $model = ProductFactory::create($type = 'medicine');
+        $model = ProductFactory::create($type = '新ルルA錠s50錠');
         $this->assertInstanceOf(Medicine::class, $model);
     }
 
     /** @test */
-    public function quasi_drugを渡すとQuasiDrugモデルが返って来る()
+    public function リポビタンDを渡すとQuasiDrugモデルが返って来る()
     {
-        $model = ProductFactory::create($type = 'quasi_drug');
+        $model = ProductFactory::create($name = 'リポビタンD');
         $this->assertInstanceOf(QuasiDrug::class, $model);
+    }
+
+    /** @test */
+    public function 手巻き直火焼き紅しゃけを渡すとFoodモデルが返ってくる()
+    {
+        $model = ProductFactory::create($name = '手巻き直火焼き紅しゃけ');
+        $this->assertInstanceOf(Food::class, $model);
     }
 }
