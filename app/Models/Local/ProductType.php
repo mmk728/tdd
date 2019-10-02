@@ -14,17 +14,17 @@ class ProductType
     public function typeName()
     {
         if ($this->name === 'キリン生茶555mlペットボトル' || $this->name === 'オロナミンC') {
-            return '飲料品';
+            return 'drink';
         }
         if ($this->name === 'キリンチューハイ氷結グレープフルーツ350ml缶' || $this->name === 'ストロングゼロ〈ダブルグレープフルーツ〉350ml缶') {
-            return '酒類';
+            return 'liquor';
         }
         if ($this->name === '新ルルA錠s50錠') {
-            return '医薬品';
+            return 'medicine';
         }
         if ($this->name === 'リポビタンD') {
-            return '医薬部外品';
+            return 'quasi_drug';
         }
-        return '食料品';
+        return 'food';
     }
 }
