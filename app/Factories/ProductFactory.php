@@ -10,12 +10,7 @@ class ProductFactory
 {
     public static function create($type)
     {
-        if ($type === 'liquor') {
-            return new Liquor();
-        }
-        if ($type === 'drink') {
-            return new Drink();
-        }
-        return new Food();
+        $model_name = "App\\Models\\" . ucfirst($type);
+        return new $model_name;
     }
 }
