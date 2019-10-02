@@ -20,6 +20,12 @@ class FoodTest extends TestCase
     }
 
     /** @test */
+    public function からあげ棒の税抜き価格は114円である()
+    {
+        $this->assertEquals(114, (new Food($name = 'からあげ棒'))->no_taxed_price);
+    }
+
+    /** @test */
     public function 設定されていないキーにアクセスしようとするとエラーになる()
     {
         $this->expectException('\UnexpectedValueException');

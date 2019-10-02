@@ -10,7 +10,8 @@ class Food implements Product
 
     const LIST = [
         '手巻き直火焼き紅しゃけ' => 139,
-        '大きなおむすびマヨネーズ' => 186
+        '大きなおむすびマヨネーズ' => 186,
+        'からあげ棒' => 114
     ];
 
     public function __construct($name)
