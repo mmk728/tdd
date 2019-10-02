@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Local;
+namespace App\Models\Local;
 
 class ProductType
 {
@@ -13,10 +13,10 @@ class ProductType
 
     public function typeName()
     {
-        if ($this->name === 'キリン生茶555mlペットボトル') {
+        if ($this->name === 'キリン生茶555mlペットボトル' || $this->name === 'オロナミンC') {
             return '飲料品';
         }
-        if ($this->name === 'キリンチューハイ氷結グレープフルーツ350ml缶') {
+        if ($this->name === 'キリンチューハイ氷結グレープフルーツ350ml缶' || $this->name === 'ストロングゼロ〈ダブルグレープフルーツ〉350ml缶') {
             return '酒類';
         }
         if ($this->name === '新ルルA錠s50錠') {

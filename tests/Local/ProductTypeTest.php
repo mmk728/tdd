@@ -2,7 +2,7 @@
 
 namespace Tests\Local;
 
-use App\Local\ProductType;
+use App\Models\Local\ProductType;
 use Tests\TestCase;
 
 class ProductTypeTest extends TestCase
