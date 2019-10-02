@@ -5,6 +5,7 @@ namespace Tests\Factories;
 use App\Factories\ProductFactory;
 use App\Models\Drink;
 use App\Models\Food;
+use App\Models\Liquor;
 use Tests\TestCase;
 
 class ProductFactoryTest extends TestCase
@@ -21,5 +22,12 @@ class ProductFactoryTest extends TestCase
     {
         $model = ProductFactory::create($type = 'drink');
         $this->assertInstanceOf(Drink::class, $model);
+    }
+
+    /** @test */
+    public function liquorを渡すとLiquorモデルが返ってくる()
+    {
+        $model = ProductFactory::create($type = 'liquor');
+        $this->assertInstanceOf(Liquor::class, $model);
     }
 }
