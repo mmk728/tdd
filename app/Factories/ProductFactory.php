@@ -10,7 +10,7 @@ class ProductFactory
     {
         $type = (new ProductType($name))->typeName();
         $model_name = "App\\Models\\" . self::upperCamelize($type);
-        return new $model_name;
+        return new $model_name($name);
     }
 
     private static function upperCamelize($str)
