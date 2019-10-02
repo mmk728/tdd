@@ -3,11 +3,13 @@
 namespace App\Models;
 
 class Medicine implements Product
-{   
+{
+    private $name;
     private $no_taxed_price;
 
-    public function __construct()
+    public function __construct($name)
     {
+        $this->name = $name;
         $this->no_taxed_price = 871;        
     }
 

@@ -10,6 +10,6 @@ class QuasiDrugTest extends TestCase
     /** @test */
     public function リポビタンDの税抜き価格は146円である()
     {
-        $this->assertEquals(146, (new QuasiDrug())->no_taxed_price);
+        $this->assertEquals(146, (new QuasiDrug($name = 'リポビタンD'))->no_taxed_price);
     }
 }

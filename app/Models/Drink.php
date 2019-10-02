@@ -4,6 +4,7 @@ namespace App\Models;
 
 class Drink implements Product
 {
+    private $name;
     private $no_taxed_price;
 
     const LIST = [
@@ -13,6 +14,7 @@ class Drink implements Product
 
     public function __construct($name)
     {
+        $this->name = $name;
         $this->no_taxed_price = self::LIST[$name];
     }
 

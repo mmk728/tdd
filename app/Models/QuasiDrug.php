@@ -4,10 +4,12 @@ namespace App\Models;
 
 class QuasiDrug implements Product
 {
+    private $name;
     private $no_taxed_price;
 
-    public function __construct()
+    public function __construct($name)
     {
+        $this->name = $name;
         $this->no_taxed_price = 146;
     }
 

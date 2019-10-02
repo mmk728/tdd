@@ -10,6 +10,6 @@ class MedicineTest extends TestCase
     /** @test */
     public function 新ルルA錠s50錠の税抜き価格は871円である()
     {
-        $this->assertEquals(871, (new Medicine())->no_taxed_price);
+        $this->assertEquals(871, (new Medicine($name = '新ルルA錠s50錠'))->no_taxed_price);
     }
 }
