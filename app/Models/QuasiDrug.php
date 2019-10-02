@@ -2,7 +2,10 @@
 
 namespace App\Models;
 
-class QuasiDrug
+class QuasiDrug implements Product
 {
-    
+    public function isReducedTaxRate()
+    {
+        return false;
+    }
 }

@@ -2,7 +2,10 @@
 
 namespace App\Models;
 
-class Medicine
-{
-    
+class Medicine implements Product
+{   
+    public function isReducedTaxRate()
+    {
+        return false;
+    }
 }

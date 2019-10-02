@@ -2,7 +2,10 @@
 
 namespace App\Models;
 
-class Liquor
+class Liquor implements Product
 {
-    
+    public function isReducedTaxRate()
+    {
+        return false;
+    }
 }
