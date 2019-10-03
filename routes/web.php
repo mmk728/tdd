@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/keisan', 301);
+
+Route::get('/keisan', 'KeisanController@index');
