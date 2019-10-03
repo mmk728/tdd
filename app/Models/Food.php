@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Food extends Product
 {
+    protected $tax_rate = 8;
+
     const LIST = [
         '手巻き直火焼き紅しゃけ' => 139,
         '大きなおむすびマヨネーズ' => 186,

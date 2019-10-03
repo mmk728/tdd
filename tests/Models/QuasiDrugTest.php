@@ -24,4 +24,16 @@ class QuasiDrugTest extends TestCase
         $quasi_drug->add();
         $this->assertEquals(730, $quasi_drug->total_no_taxed_price[$name]);
     }
+
+    /** @test */
+    public function リポビタンDの税込み価格の合計値を取得できる()
+    {
+        $quasi_drug = new QuasiDrug($name = 'リポビタンD');
+        $quasi_drug->add();
+        $quasi_drug->add();
+        $quasi_drug->add();
+        $quasi_drug->add();
+        $quasi_drug->add();
+        $this->assertEquals(803, $quasi_drug->totalTaxedPrice());
+    }
 }

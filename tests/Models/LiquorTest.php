@@ -26,4 +26,12 @@ class LiquorTest extends TestCase
         $liquor->add();
         $this->assertEquals(141, $liquor->total_no_taxed_price[$name]);
     }
+
+    /** @test */
+    public function キリンチューハイ氷結グレープフルーツ350ml缶の税込み価格の合計値を取得できる()
+    {
+        $liquor = new Liquor($name = 'キリンチューハイ氷結グレープフルーツ350ml缶');
+        $liquor->add();
+        $this->assertEquals(155, $liquor->totalTaxedPrice());
+    }
 }
