@@ -2,11 +2,10 @@
 
 namespace App\Models;
 
-class Drink implements Product
+class Drink extends Product
 {
-    private $name;
-    private $no_taxed_price;
-
+    protected $tax_rate = 8;
+    
     const LIST = [
         'キリン生茶555mlペットボトル' => 140,
         'オロナミンC' => 105
@@ -21,13 +20,5 @@ class Drink implements Product
     public function isReducedTaxRate()
     {
         return true;
-    }
-
-    public function __get($key)
-    {
-        if (property_exists($this, $key) === false) {
-            throw new \UnexpectedValueException();
-        }
-        return $this->$key;
     }
 }

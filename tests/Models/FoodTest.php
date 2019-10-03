@@ -31,4 +31,24 @@ class FoodTest extends TestCase
         $this->expectException('\UnexpectedValueException');
         (new Food($name = '手巻き直火焼き紅しゃけ'))->hoge;
     }
+
+    /** @test */
+    public function からあげ棒の税抜き価格の合計値が取得できる()
+    {
+        $food = new Food($name = 'からあげ棒');
+        $food->add();
+        $food->add();
+        $food->add();
+        $this->assertEquals(342, $food->total_no_taxed_price[$name]);
+    }
+
+    /** @test */
+    public function からあげ棒の税込み価格の合計値が取得できる()
+    {
+        $food = new Food($name = 'からあげ棒');
+        $food->add();
+        $food->add();
+        $food->add();
+        $this->assertEquals(369, $food->totalTaxedPrice());
+    }
 }

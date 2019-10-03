@@ -2,11 +2,8 @@
 
 namespace App\Models;
 
-class Medicine implements Product
+class Medicine extends Product
 {
-    private $name;
-    private $no_taxed_price;
-
     public function __construct($name)
     {
         $this->name = $name;
@@ -16,10 +13,5 @@ class Medicine implements Product
     public function isReducedTaxRate()
     {
         return false;
-    }
-
-    public function __get($key)
-    {
-        return $this->$key;
     }
 }

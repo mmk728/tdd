@@ -25,4 +25,22 @@ class DrinkTest extends TestCase
         $this->expectException('\UnexpectedValueException');
         (new Drink($name = 'オロナミンC'))->hoge;
     }
+
+    /** @test */
+    public function オロナミンCの税抜き価格の合計値を取得できる()
+    {
+        $drink = new Drink($name = 'オロナミンC');
+        $drink->add();
+        $drink->add();
+        $this->assertEquals(210, $drink->total_no_taxed_price[$name]);
+    }
+
+    /** @test */
+    public function オロナミンCの税込み価格の合計値を取得できる()
+    {
+        $drink = new Drink($name = 'オロナミンC');
+        $drink->add();
+        $drink->add();
+        $this->assertEquals(226, $drink->totalTaxedPrice());
+    }
 }

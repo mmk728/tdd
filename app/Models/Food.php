@@ -4,10 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Food implements Product
+class Food extends Product
 {
-    private $name;
-    private $no_taxed_price;
+    protected $tax_rate = 8;
 
     const LIST = [
         '手巻き直火焼き紅しゃけ' => 139,
@@ -24,13 +23,5 @@ class Food implements Product
     public function isReducedTaxRate()
     {
         return true;
-    }
-
-    public function __get($key)
-    {
-        if (property_exists($this, $key) === false) {
-            throw new \UnexpectedValueException();
-        }
-        return $this->$key;
     }
 }

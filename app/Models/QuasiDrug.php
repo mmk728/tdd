@@ -2,11 +2,8 @@
 
 namespace App\Models;
 
-class QuasiDrug implements Product
+class QuasiDrug extends Product
 {
-    private $name;
-    private $no_taxed_price;
-
     public function __construct($name)
     {
         $this->name = $name;
@@ -16,10 +13,5 @@ class QuasiDrug implements Product
     public function isReducedTaxRate()
     {
         return false;
-    }
-
-    public function __get($key)
-    {
-        return $this->$key;
     }
 }
